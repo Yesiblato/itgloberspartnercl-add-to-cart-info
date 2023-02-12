@@ -7,7 +7,15 @@ import styles from './styles.css'
 
 const AddToCartInfo = ({ blockClass }: { blockClass: string }) => {
   const container = generateBlockClass(styles.container, blockClass)
-  const container__item = generateBlockClass(styles.container__item, blockClass)
+  const containerItem = generateBlockClass(styles.containerItem, blockClass)
+  const nameStyle = generateBlockClass(styles.nameStyle, blockClass)
+  const imageStyle = generateBlockClass(styles.imageStyle, blockClass)
+  const tituloStyle = generateBlockClass(styles.tituloStyle, blockClass)
+  const containerInfo = generateBlockClass(styles.containerInfo, blockClass)
+  const priceStyle = generateBlockClass(styles.priceStyle, blockClass)
+  const containerTotal = generateBlockClass(styles.containerTotal, blockClass)
+  const totalStyle = generateBlockClass(styles.totalStyle, blockClass)
+  const itemsStyle = generateBlockClass(styles.itemsStyle, blockClass)
   const productInfo = useProduct()
   const { orderForm: {
     items,
@@ -18,18 +26,19 @@ const AddToCartInfo = ({ blockClass }: { blockClass: string }) => {
   console.log("estos son mis Totalizers: ", totalizers[0])
   return (
     <div className={container}>
+       <p className={tituloStyle}>¡AÑADIDO AL CARRITO CORECTAMENTE!</p>
       {
         items.map((item: any, index:number) => {
           console.log(item);
           return (
-            <div key={index} className={container__item}>
-              <div>
-                <img src={item.imageUrls.at1x} />
+            <div key={index} className={containerItem}>
+              <div className={containerInfo}>
+                <img src={item.imageUrls.at1x} className={imageStyle}/>
               </div>
               <div>
-                <p>{item.name}</p>
-                <p>{item.id}</p>
-                <p>${item.price / 100}</p>
+                <p className={nameStyle}>{item.name} </p>
+                <p>Ref: {item.id}</p>
+                <p className={priceStyle}>$ {item.price / 100}</p>
                 <p>Cant: {item.quantity}</p>
               </div>
             </div>
@@ -37,11 +46,11 @@ const AddToCartInfo = ({ blockClass }: { blockClass: string }) => {
           )
         })
       }
-      <div>
-        <p>Tenemos {items.length} itmes en tu compra</p>
-        <p>Total: ${totalizers[0]?.value / 100}</p>
+      <div className={containerTotal}>
+        <p className={itemsStyle}>Tenemos {items.length} itmes en tu compra</p>
+        <p className={totalStyle}>Total: $ {totalizers[0]?.value / 100}</p>
     </div>
-      <ButtonGroup />
+      <ButtonGroup blockClass=''/>
     </div>
   )
 }
