@@ -74,7 +74,6 @@
   text-decoration : none;
 }
 
-
 .linkcontinuetStyle:hover {
   color           : black;
   background-color: white;
@@ -127,23 +126,6 @@
   }
 
 }
-
-/*
-@media (max-width:350px) {
-  .linkToPayStyle {
-    font-size: 0.7em;
-  }
-
-  .linkMincartStyle {
-    font-size: 0.7em;
-  }
-
-  .linkcontinuetStyle {
-    font-size: 0.7em;
-  }
-
-} */
-
 
 @media (max-width:320px) {
   .linkToPayStyle {
