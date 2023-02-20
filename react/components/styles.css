@@ -1,14 +1,13 @@
 .container {
   padding: 20px;
-  width: 30em;
+  width  : 30em;
 }
 
 .containerItem {
-  border-bottom: 1px solid #ebedee;
-  display: flex;
+  border-bottom : 1px solid #ebedee;
+  display       : flex;
   flex-direction: row;
-  font-family: Helvetica, sans-serif;
-
+  font-family   : Helvetica, sans-serif;
 }
 
 .containerInfo {
@@ -20,40 +19,40 @@
 }
 
 .tituloStyle {
-  font-size: 1.87em;
+  font-size  : 1.87em;
   font-weight: 700;
-  color: black;
+  color      : black;
 }
 
 .nameStyle {
   font-weight: 700;
   color      : black;
   font-family: Helvetica, sans-serif;
-  font-size: 1.15em;
+  font-size  : 1.15em;
 }
 
 .priceStyle {
   font-weight: 700;
-  font-size: 1em;
+  font-size  : 1em;
 }
 
 .containerTotal {
-  padding: 1em;
+  padding         : 1em;
   background-color: #ebedee;
-  color: black;
-  border-top: 1px solid white;
+  color           : black;
+  border-top      : 1px solid white;
 
 }
 
 .totalStyle {
-  font-size: 1.1em;
+  font-size  : 1.1em;
   font-weight: 700;
   font-family: Helvetica, sans-serif;
 }
 
 .itemsStyle {
   font-family: Helvetica, sans-serif;
-  font-size: 1em;
+  font-size  : 1em;
 }
 
 @media (max-width:500px) {
@@ -65,20 +64,15 @@
     font-size: 1em;
   }
 
-
-
 }
-
 
 @media (max-width:430px) {
   .container {
     max-width: 22em;
-
   }
 
   .tituloStyle {
     font-size: 1.7em;
-
   }
 
   .nameStyle {
@@ -88,7 +82,6 @@
   .priceStyle {
     font-size: 0.9em;
   }
-
 
 }
 
@@ -115,9 +108,7 @@
   .container {
     max-width: 18em;
   }
-
 }
-
 
 @media (max-width:320px) {
   .container {
@@ -127,6 +118,4 @@
   .tituloStyle {
     font-size: 1.4em;
   }
-
-
 }
