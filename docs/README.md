@@ -1,15 +1,15 @@
 # ADD TO CART INFO COMPONENT
 
-Este es un componente personalizado que permite mostrar en un modal la información del producto que acaba de agregar al carrito  y da un total de los artículos que están en el carrito y da tres opciones para seguir con el flujo transaccional, ir al carrito, ir a pagar o continuar comprando.
+This is a custom component that allows you to display in a modal the information of the product that you just added to the cart and gives a total of the items that are in the cart and gives three options to continue with the transactional flow, go to cart, go to pay or continue shopping.
 
-En este componente se trabajó con las siguientes tecnologías:
+In this component we worked with the following technologies:
 
 - Vtex.
 - React.
 - Typescript.
 - Css.
 
-## Imágenes del componente en los diferentes tamaños.
+## Component's images.
 
 - Desktop
 
@@ -26,15 +26,15 @@ En este componente se trabajó con las siguientes tecnologías:
 
 ## Configuration 
 
-### Paso 1 - Clonar
+### Step 1 - Clone
 
-Realizar la clonación del siguiente repositorio:
-- [Repositorio](https://github.com/Yesiblato/itgloberspartnercl-add-to-cart-info)
+Cloning the following repository
+- [Repository](https://github.com/Yesiblato/itgloberspartnercl-add-to-cart-info)
 
-### Paso 2 - Editar el Manifest.json 
+### Step 2 - Edit the Manifest.json 
 
-Ingresar al archivo manifest.json y realizar las siguentes modificaciones en: `vendor`, `name`, `version`, `title` y `description`
-como se muestra en el siguiente ejemplo: 
+Enter the manifest.json file and make the following changes to: `vendor`, `name`, `version`, `title` and `description`
+as shown in the following example:
 
 ```js
 {
@@ -45,7 +45,7 @@ como se muestra en el siguiente ejemplo:
   "description": "Componente que mostrará información al momento de agregar un producto al carrito",
 }
 ```
-Además, verifique que el archivo cuente con los siguientes builders: 
+Also, check that the file has the following builders and the dependencies: 
 
 ```js
   "builders": {
@@ -55,35 +55,88 @@ Además, verifique que el archivo cuente con los siguientes builders:
     "store": "0.x"
   }
 ```
-### Paso 3 - Instalar node-modules
 
-Para realizar esta instalación de node-modules, debe estar ubicado en la carpeta de `react` de la aplicación y ejecutar el comando `yarn`, y tendrá instaladas todas las dependencias necesarias para usar esta plantilla.
+### Dependencies
+```js
+   "vtex.checkout-resources": "0.x",
+   "vtex.order-manager": "0.x",
+   "vtex.product-context": "0.x"
+```
 
-### Paso 4 - Ejecutar el preview
+### Step 3 - Install node-modules.
 
-Despues de realizar los pasos anteriores puede verificar si su componente está funcionando ejecutando el comando `vtex link` si todo funciona correctamente deberá ver en consola `Sending locale change event`.
+To carry out this installation of Node-Modules, it must be located in the `react` folder of the application and execute the `yarn` command, and will have all the necessary units to use this template installed.
 
-Si la consola muestra algún error, por favor verificar los pasos anteriores y vuelva a ejecutar `vtex link`.
+### Step 4 - Execute the preview.
 
-### Paso 5 - Implementar el componente
+After performing the previous steps you can verify if its component is running by running the `Vtex Link` command if everything works correctly should see in` Sending locale change event`.
 
-Por último, para utilizar el componente debe agregarlo a las `dependencies` en el `manifest.json` de su tienda (store-theme) de la siguiente manera:
+If the console shows any error, please verify the previous steps and re -execute `vtex link`.
+
+### Step 5 - Deploy the component
+
+Finally, to use the component you must add it to the `dependencies` in the `manifest.json` of your store (store-theme) as follows:
 
 - vendor.name : version. 
 
-Por ejemplo: 
+For example:
 ```js
   "dependencies": {
     "itgloberspartnercl.add-to-cart-info": "0.x",
   }
 ```
 
-## Dependencies
+And add the list-context block to the store-theme. For example:
+
 ```js
-   "vtex.checkout-resources": "0.x",
-   "vtex.order-manager": "0.x",
-   "vtex.product-context": "0.x"
+   "modal-trigger#add-to-cart-info": {
+    "children": [
+      "modal-layout#add-to-cart-info"
+    ],
+    "props": {
+      "customPixelEventName": "addToCart"
+    }
+  },
+  "modal-layout#add-to-cart-info": {
+    "children": [
+      "modal-header#add-to-cart-info",
+      "add-to-cart-info"
+    ]
+  },
+  "modal-header#add-to-cart-info": {
+    "props": {
+      "showCloseButton": true, 
+      "iconCloseSize": 24
+    }
+  }
 ```
+
+## Customization
+
+To apply CSS customizations in this and other blocks, follow the instructions, in the following table you will find the name of the classes to style the component.
+
+
+| CSS Handles |
+| ----------- | 
+| `container` | 
+| `containerItem` | 
+| `containerInfo` | 
+| `imageStyle` | 
+| `titleStyle` |
+| `nameStyle` | 
+| `priceStyle` | 
+| `containerTotal` | 
+| `totalStyle` | 
+| `itemStyle` |
+| `containerButtons` | 
+| `ContainerButton2` | 
+| `linkToPayStyle` | 
+| `linkMincartStyle` | 
+| `linkcontinuetStyle` |
+| `arrowStyle` |
+
+
+
 
 ## Contributors ✨
 
